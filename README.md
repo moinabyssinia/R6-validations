@@ -11,3 +11,35 @@ of these sections will be assigned in separate weeks.
 
 This repository will be used again for the class section on Bootstrap in Rails, which is also
 a separate week.
+
+_____________________________________________________________________________________
+### using byebug 
+place `byebug` right before the line of code where error was encountered 
+run the server after this 
+
+#### shortcuts
+type `c` to resume the server until it finishes or hits another breakpoint
+type `n` to execute the next line of code 
+type `l` to output the source code around the currently executing line
+type `q` to quit
+
+`self.class` - show the current object
+`hist` - show history of debugging statements
+
+
+
+you can even put `<% byebug %>` in your erb files 
+make sure all `byebug` statements are removed before pushing code to production - otherwise the server will hang when it reaches this the statements
+
+
+when using `pry` don't forget to `ctrl + d` to exit it in order to resume the server from byebug    
+
+
+### exception handling 
+The rescue_from statement calls the catch_not_found method 
+`rescue_from ActiveRecord::RecordNotFound, with: :catch_not_found`
+`def catch_not_found(e)
+      Rails.logger.debug("We had a not found exception.")
+      flash.alert = e.to_s
+      redirect_to customers_path
+end`
