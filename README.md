@@ -43,3 +43,11 @@ The rescue_from statement calls the catch_not_found method
       flash.alert = e.to_s
       redirect_to customers_path
 end`
+
+
+_____________________________________________________________________________________
+Behavior driven development (BDD)
+
+
+_____________________________________________________________________________________
+### RSpec cheatsheet
