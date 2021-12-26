@@ -95,8 +95,14 @@ RSpec.describe "CustomersControllers", type: :request do
       # create a customer
       customer = FactoryBot.create(:customer)
       
+      # delete record
+      customer.delete()  
       # check if deleting record raises the not found error
-      expect{  delete customer_path(customer.id) }.to raise_error(Errors::RecordNotFound)
+
+      # binding.pry
+
+      expect( Customer.find_by( first_name: customer[:first_name] ).nil? ).to be true
+      
     end 
   end
 end

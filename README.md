@@ -51,3 +51,9 @@ Behavior driven development (BDD)
 
 _____________________________________________________________________________________
 ### RSpec cheatsheet
+render_template: 
+
+#### FactoryBot
+create_list
+create
+attributes_for: 
